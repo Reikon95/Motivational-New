@@ -1,0 +1,5 @@
+Basic plan
+
+Update the quote every 5 seconds, change background colour.
+
+Update a link to the person?
