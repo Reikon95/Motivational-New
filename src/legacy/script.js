@@ -1,18 +1,18 @@
 import React from 'react';
 export default function Quotes() {
-  const randomNumber = Math.floor(Math.random() * 8);
+  const randomNumber = Math.floor(Math.random() * 3);
 
   let quote = "";
 
   switch(randomNumber) {
     case 0:
-      quote = "You miss 100% of the shots you don't take ayne Gretzky - Hockey's greatest ever player";
+      quote = {words: "You miss 100% of the shots you don't take", person: 'Wayne Gretzky', description: 'NHL all time record goalscorer', wiki: 'https://en.wikipedia.org/wiki/Wayne_Gretzky'};
       break;
     case 1:
-      quote = 'Every time I practice, the luckier I get ary Player - Golfing legend';
+      quote = {words: 'Every time I practice, the luckier I get', person: 'Gary Player', description: 'Golfing legend - three time masters winner', wiki: 'https://en.wikipedia.org/wiki/Gary_Player'};
       break;
     case 2:
-      quote = "Winning isn't everything, but wanting to win is nce Lombardi - NFL player and coach";
+      quote = {words: "Winning isn't everything, but wanting to win is", person: 'Vince Lombardi', description: 'NFL player and coach', wiki: 'https://en.wikipedia.org/wiki/Vince_Lombardi'};
       break;
     case 3:
       quote = "I've failed over and over again in my life. And that is why I succeed ichael Jordan - NBA legend";
@@ -27,10 +27,14 @@ export default function Quotes() {
       quote = 'You are never a loser until you stop trying Mike Ditka - former NFL player';
       break;
     case 7:
-      quote = 'Half the game is mental, the other half is being mental im McKenny - Hockey player';
+      quote = 'Half the game is mental, the other half is being mental Jim McKenny - Hockey player';
     break;
   }
   return (
-    quote
+    <>
+    <h2>{quote.words}</h2>
+    <h3>{quote.person} ({quote.description})</h3>
+    <h4>Find out more about {quote.person} <a href={quote.wiki}>here</a></h4>
+    </>
   );
 }
