@@ -1,0 +1,17 @@
+* {
+    margin: 0;
+}
+a {
+    text-decoration: none;
+}
+
+.quote-box {
+    height: 100vh;
+    width: auto;
+    background-color: gray;
+}
+
+.content {
+    padding-top: 45vh;
+    color: white;
+}

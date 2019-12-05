@@ -1,7 +1,7 @@
 import React from 'react';
+import './quotesstyle.css'
 export default function Quotes() {
-  const randomNumber = Math.floor(Math.random() * 8);
-
+  let randomNumber = Math.floor(Math.random() * 8);
   let quote = "";
 
   switch(randomNumber) {
@@ -43,9 +43,13 @@ export default function Quotes() {
   }
   return (
     <>
+    <div className="quote-box">
+      <div className="content">
     <h2>{quote.words}</h2>
     <h3>{quote.person} ({quote.description})</h3>
     <h4>Find out more about {quote.person} <a href={quote.wiki}>here</a></h4>
+      </div>
+    </div>    
     </>
   );
 }
