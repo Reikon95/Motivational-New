@@ -1,8 +1,30 @@
-import React from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import './quotesstyle.css'
 export default function Quotes() {
-  let randomNumber = Math.floor(Math.random() * 8);
+  function useInterval(callback, delay) {
+    const savedCallback = useRef();
+  
+    // Remember the latest callback.
+    useEffect(() => {
+      savedCallback.current = callback;
+    }, [callback]);
+  
+    // Set up the interval.
+    useEffect(() => {
+      function tick() {
+        savedCallback.current();
+      }
+      if (delay !== null) {
+        let id = setInterval(tick, delay);
+        return () => clearInterval(id);
+      }
+    }, [delay]);
+  }
+  let [randomNumber, setRandomNumber] = useState(0)
   let quote = "";
+  useInterval(() => {
+    setRandomNumber(Math.floor(Math.random() * 8))
+  }, 1000)
 
   switch(randomNumber) {
     case 0:
