@@ -24,7 +24,7 @@ export default function Quotes() {
   let quote = "";
   useInterval(() => {
     setRandomNumber(Math.floor(Math.random() * 8))
-  }, 1000)
+  }, 5000)
 
   switch(randomNumber) {
     case 0:
